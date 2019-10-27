@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="头文件\Tree">
+      <UniqueIdentifier>{b0c15d48-c885-4566-8c6a-ddbf87b0426c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Test">
+      <UniqueIdentifier>{371be109-e9d9-436d-ac66-34906b869615}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Stack">
+      <UniqueIdentifier>{d4b1a443-141a-4ebc-8ead-7642d5c85c33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Queue">
+      <UniqueIdentifier>{2c32d30e-ad8a-4d1a-a4da-e265c52c0585}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Chain">
+      <UniqueIdentifier>{ab2534c1-9bcc-4a39-bbf3-57a36d9d9089}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\List">
+      <UniqueIdentifier>{2dee0a05-6b7c-4911-8a39-165c68b23d57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Other">
+      <UniqueIdentifier>{60720a16-18f7-4b9e-8f2c-6f0388006d0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Matrix">
+      <UniqueIdentifier>{2982b770-32e2-4ea8-94b1-fcae0bb88283}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\PriorityQueue">
+      <UniqueIdentifier>{cf5dfaf8-f7c0-4d67-96f4-9bb0e98db8c9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="binaryTreeNode.h">
+      <Filter>头文件\Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="exprTree.h">
+      <Filter>头文件\Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="MidToBack.h">
+      <Filter>头文件\Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="stack.h">
+      <Filter>头文件\Stack</Filter>
+    </ClInclude>
+    <ClInclude Include="linkedStack.h">
+      <Filter>头文件\Stack</Filter>
+    </ClInclude>
+    <ClInclude Include="arrayStack.h">
+      <Filter>头文件\Stack</Filter>
+    </ClInclude>
+    <ClInclude Include="queue.h">
+      <Filter>头文件\Queue</Filter>
+    </ClInclude>
+    <ClInclude Include="arrayQueue.h">
+      <Filter>头文件\Queue</Filter>
+    </ClInclude>
+    <ClInclude Include="chain.h">
+      <Filter>头文件\Chain</Filter>
+    </ClInclude>
+    <ClInclude Include="chainNode.h">
+      <Filter>头文件\Chain</Filter>
+    </ClInclude>
+    <ClInclude Include="circularListWithHeader.h">
+      <Filter>头文件\Chain</Filter>
+    </ClInclude>
+    <ClInclude Include="vectorList.h">
+      <Filter>头文件\List</Filter>
+    </ClInclude>
+    <ClInclude Include="linearList.h">
+      <Filter>头文件\List</Filter>
+    </ClInclude>
+    <ClInclude Include="arrayList.h">
+      <Filter>头文件\List</Filter>
+    </ClInclude>
+    <ClInclude Include="binSort.h">
+      <Filter>头文件\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="myException.h">
+      <Filter>头文件\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="matrix.h">
+      <Filter>头文件\Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="linkedQueue.h">
+      <Filter>头文件\Queue</Filter>
+    </ClInclude>
+    <ClInclude Include="extendedChain.h">
+      <Filter>头文件\Chain</Filter>
+    </ClInclude>
+    <ClInclude Include="extendedLinearList.h">
+      <Filter>头文件\List</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadInTree.h">
+      <Filter>头文件\Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="maxPriorityQueue.h">
+      <Filter>头文件\PriorityQueue</Filter>
+    </ClInclude>
+    <ClInclude Include="maxHeap.h">
+      <Filter>头文件\PriorityQueue</Filter>
+    </ClInclude>
+    <ClInclude Include="maxHblt.h">
+      <Filter>头文件\PriorityQueue</Filter>
+    </ClInclude>
+    <ClInclude Include="minHeap.h">
+      <Filter>头文件\PriorityQueue</Filter>
+    </ClInclude>
+    <ClInclude Include="minPriorityQueue.h">
+      <Filter>头文件\PriorityQueue</Filter>
+    </ClInclude>
+    <ClInclude Include="HuffmanTree.h">
+      <Filter>头文件\Tree</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="binaryTreeTest.cpp">
+      <Filter>源文件\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="arrayListTest.cpp">
+      <Filter>源文件\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="arrayStackTest.cpp">
+      <Filter>源文件\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="maxHeapTest.cpp">
+      <Filter>源文件\Test</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

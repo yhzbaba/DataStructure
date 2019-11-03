@@ -40,6 +40,12 @@
     <Filter Include="头文件\PriorityQueue">
       <UniqueIdentifier>{cf5dfaf8-f7c0-4d67-96f4-9bb0e98db8c9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\WinnerTree">
+      <UniqueIdentifier>{c747fb25-7d5b-48e3-8c46-4f5a7841bbd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Graph">
+      <UniqueIdentifier>{72bfda13-48a7-4d14-8069-e4bc561ebc8d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="binaryTreeNode.h">
@@ -122,6 +128,36 @@
     </ClInclude>
     <ClInclude Include="HuffmanTree.h">
       <Filter>头文件\Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="winnerTree.h">
+      <Filter>头文件\WinnerTree</Filter>
+    </ClInclude>
+    <ClInclude Include="completeWinnerTree.h">
+      <Filter>头文件\WinnerTree</Filter>
+    </ClInclude>
+    <ClInclude Include="graph.h">
+      <Filter>头文件\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="edge.h">
+      <Filter>头文件\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="Graph_Matrix.h">
+      <Filter>头文件\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="vertexIterator.h">
+      <Filter>头文件\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="adjacencyWDigraph.h">
+      <Filter>头文件\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="make2dArray.h">
+      <Filter>头文件\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="delete2dArray.h">
+      <Filter>头文件\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="weightedEdge.h">
+      <Filter>头文件\Graph</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

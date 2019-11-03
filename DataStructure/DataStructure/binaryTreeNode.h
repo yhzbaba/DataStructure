@@ -112,7 +112,8 @@ void levelOrder(binaryTreeNode<T>* t)
 	}
 }
 
-//NIO		3
+
+//NIO		4
 template<class T>
 void nio(binaryTreeNode<T>* t)
 {
@@ -138,6 +139,8 @@ void nio(binaryTreeNode<T>* t)
 	}
 }
 
+
+
 //NPO
 template<class T>
 class AssBinTreeNode
@@ -153,7 +156,7 @@ public:
 	void SetPtr(binaryTreeNode<T>* p) { ptr = p; }
 };
 
-//			3
+//			4
 template<class T>
 void npo(binaryTreeNode<T>* t)
 {
@@ -200,6 +203,7 @@ void npo(binaryTreeNode<T>* t)
 			cout << t->element << endl;
 	}
 }
+
 
 //CBT			2
 template<class T>

@@ -123,6 +123,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="adjacencyWDigraph.h" />
     <ClInclude Include="arrayList.h" />
     <ClInclude Include="arrayQueue.h" />
     <ClInclude Include="arrayStack.h" />
@@ -131,12 +132,18 @@
     <ClInclude Include="chain.h" />
     <ClInclude Include="chainNode.h" />
     <ClInclude Include="circularListWithHeader.h" />
+    <ClInclude Include="completeWinnerTree.h" />
+    <ClInclude Include="delete2dArray.h" />
+    <ClInclude Include="edge.h" />
     <ClInclude Include="exprTree.h" />
     <ClInclude Include="extendedChain.h" />
     <ClInclude Include="extendedLinearList.h" />
+    <ClInclude Include="graph.h" />
+    <ClInclude Include="Graph_Matrix.h" />
     <ClInclude Include="HuffmanTree.h" />
     <ClInclude Include="linkedQueue.h" />
     <ClInclude Include="linkedStack.h" />
+    <ClInclude Include="make2dArray.h" />
     <ClInclude Include="maxHblt.h" />
     <ClInclude Include="maxHeap.h" />
     <ClInclude Include="maxPriorityQueue.h" />
@@ -150,6 +157,9 @@
     <ClInclude Include="stack.h" />
     <ClInclude Include="ThreadInTree.h" />
     <ClInclude Include="vectorList.h" />
+    <ClInclude Include="vertexIterator.h" />
+    <ClInclude Include="weightedEdge.h" />
+    <ClInclude Include="winnerTree.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="arrayListTest.cpp" />

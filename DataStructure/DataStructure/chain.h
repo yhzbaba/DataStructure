@@ -128,6 +128,7 @@ int chain<T>::indexOf(const T& theElement) const
 		return -1;
 	else
 		return index;
+
 }
 
 //删除索引为theIndex的元素
@@ -165,7 +166,6 @@ void chain<T>::insert(int theIndex, const T& theElement)
 		cout << "Invalid insert index." << endl;
 		return;
 	}
-
 	if (theIndex == 0)
 	{
 		firstNode = new chainNode<T>(theElement, firstNode);

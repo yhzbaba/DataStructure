@@ -177,4 +177,26 @@ public:
 			out << endl;
 		}
 	}
+
+	void bfs(int v, int reach[], int label)
+	{
+		arrayQueue<int> q(10);
+		reach[v] = label;
+		q.push(v);
+		while (!q.empty())
+		{
+			int w = q.front;
+			q.pop();
+
+			//标记所有邻接于顶点w的还没有到达的顶点
+			for (int u = 1; u <= n; u++)
+			{
+				if (a[w][u] != noEdge && reach[u] == 0)
+				{
+					q.push(u);
+					reach[u] = label;
+				}
+			}
+		}
+	}
 };

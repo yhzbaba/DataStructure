@@ -3,7 +3,8 @@
 	声明一个数据成员lastNode
 	提供改进的erase和insert代码
 	定义在linearList中剩余的纯虚函数
-	实现clear和push_back*/
+	实现clear和push_back
+*/
 
 #include <iostream>
 #include <sstream>
@@ -14,6 +15,11 @@
 #include "myException.h"
 
 using namespace std;
+
+/*
+	2019.11.9 √
+*/
+
 
 template<class T>
 class extendedChain :public extendedLinearList<T>, public chain<T>
@@ -60,7 +66,7 @@ protected:
 	chainNode<T>* lastNode;
 };
 
-//erase
+//erase	2
 template<class T>
 void extendedChain<T>::erase(int theIndex)
 {
@@ -123,7 +129,7 @@ void extendedChain<T>::insert(int theIndex, const T& theElement)
 	listSize++;
 }
 
-//push_back
+//push_back	2
 template<class T>
 void extendedChain<T>::push_back(const T& theElement)
 {

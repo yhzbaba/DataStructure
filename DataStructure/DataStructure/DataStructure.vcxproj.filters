@@ -46,6 +46,12 @@
     <Filter Include="头文件\Graph">
       <UniqueIdentifier>{72bfda13-48a7-4d14-8069-e4bc561ebc8d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\UnionSet">
+      <UniqueIdentifier>{2fe03e4e-736e-433f-8137-c45b828a343c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Sort">
+      <UniqueIdentifier>{890cc55d-5f41-49c3-b952-12ffb188f543}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="binaryTreeNode.h">
@@ -159,6 +165,21 @@
     <ClInclude Include="weightedEdge.h">
       <Filter>头文件\Graph</Filter>
     </ClInclude>
+    <ClInclude Include="UFSet.h">
+      <Filter>头文件\UnionSet</Filter>
+    </ClInclude>
+    <ClInclude Include="UnionFindSet.h">
+      <Filter>头文件\UnionSet</Filter>
+    </ClInclude>
+    <ClInclude Include="Graph_List.h">
+      <Filter>头文件\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="sort.h">
+      <Filter>头文件\Sort</Filter>
+    </ClInclude>
+    <ClInclude Include="Tree.h">
+      <Filter>头文件\Tree</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="binaryTreeTest.cpp">
@@ -171,6 +192,9 @@
       <Filter>源文件\Test</Filter>
     </ClCompile>
     <ClCompile Include="maxHeapTest.cpp">
+      <Filter>源文件\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Graph_List_Test.cpp">
       <Filter>源文件\Test</Filter>
     </ClCompile>
   </ItemGroup>

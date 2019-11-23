@@ -113,7 +113,7 @@ void levelOrder(binaryTreeNode<T>* t)
 }
 
 
-//NIO		4
+//NIO		5
 template<class T>
 void nio(binaryTreeNode<T>* t)
 {
@@ -138,8 +138,6 @@ void nio(binaryTreeNode<T>* t)
 		t = t->rightChild;
 	}
 }
-
-
 
 //NPO
 template<class T>

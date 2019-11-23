@@ -139,6 +139,7 @@
     <ClInclude Include="extendedChain.h" />
     <ClInclude Include="extendedLinearList.h" />
     <ClInclude Include="graph.h" />
+    <ClInclude Include="Graph_List.h" />
     <ClInclude Include="Graph_Matrix.h" />
     <ClInclude Include="HuffmanTree.h" />
     <ClInclude Include="linkedQueue.h" />
@@ -154,8 +155,12 @@
     <ClInclude Include="linearList.h" />
     <ClInclude Include="matrix.h" />
     <ClInclude Include="queue.h" />
+    <ClInclude Include="sort.h" />
     <ClInclude Include="stack.h" />
     <ClInclude Include="ThreadInTree.h" />
+    <ClInclude Include="Tree.h" />
+    <ClInclude Include="UFSet.h" />
+    <ClInclude Include="UnionFindSet.h" />
     <ClInclude Include="vectorList.h" />
     <ClInclude Include="vertexIterator.h" />
     <ClInclude Include="weightedEdge.h" />
@@ -165,6 +170,7 @@
     <ClCompile Include="arrayListTest.cpp" />
     <ClCompile Include="arrayStackTest.cpp" />
     <ClCompile Include="binaryTreeTest.cpp" />
+    <ClCompile Include="Graph_List_Test.cpp" />
     <ClCompile Include="maxHeapTest.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

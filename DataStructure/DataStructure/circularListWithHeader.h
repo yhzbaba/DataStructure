@@ -7,6 +7,10 @@
 
 using namespace std;
 
+/*
+	2019.11.9 °Ã
+*/
+
 template<class T>
 class circularListWithHeader
 {
@@ -42,7 +46,7 @@ void circularListWithHeader<T>::checkIndex(int theIndex)const
 	}
 }
 
-//2
+//3
 template<class T>
 int circularListWithHeader<T>::indexOf(const T& theElement) const
 {
@@ -62,7 +66,7 @@ int circularListWithHeader<T>::indexOf(const T& theElement) const
 		return index;
 }
 
-//≤Â»Î		2
+//≤Â»Î		3
 template<class T>
 void circularListWithHeader<T>::insert(int theIndex, const T& theElement)
 {

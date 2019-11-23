@@ -7,6 +7,10 @@
 
 using namespace std;
 
+/*
+	2019.11.9 √
+*/
+
 
 
 template<class T>
@@ -128,7 +132,6 @@ int chain<T>::indexOf(const T& theElement) const
 		return -1;
 	else
 		return index;
-
 }
 
 //删除索引为theIndex的元素

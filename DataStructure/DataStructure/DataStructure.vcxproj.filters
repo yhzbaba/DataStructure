@@ -52,6 +52,12 @@
     <Filter Include="头文件\Sort">
       <UniqueIdentifier>{890cc55d-5f41-49c3-b952-12ffb188f543}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\SkipList">
+      <UniqueIdentifier>{063af74c-c45a-42d3-af31-44524af2f62f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Hash">
+      <UniqueIdentifier>{cb3d7d7c-74da-41ee-8134-021330cc86da}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="binaryTreeNode.h">
@@ -180,6 +186,36 @@
     <ClInclude Include="Tree.h">
       <Filter>头文件\Tree</Filter>
     </ClInclude>
+    <ClInclude Include="dictionary.h">
+      <Filter>头文件\SkipList</Filter>
+    </ClInclude>
+    <ClInclude Include="sortedChain.h">
+      <Filter>头文件\SkipList</Filter>
+    </ClInclude>
+    <ClInclude Include="pairNode.h">
+      <Filter>头文件\SkipList</Filter>
+    </ClInclude>
+    <ClInclude Include="skipNode.h">
+      <Filter>头文件\SkipList</Filter>
+    </ClInclude>
+    <ClInclude Include="skipList.h">
+      <Filter>头文件\SkipList</Filter>
+    </ClInclude>
+    <ClInclude Include="threeToLong.h">
+      <Filter>头文件\Hash</Filter>
+    </ClInclude>
+    <ClInclude Include="stringToInt.h">
+      <Filter>头文件\Hash</Filter>
+    </ClInclude>
+    <ClInclude Include="hashTable.h">
+      <Filter>头文件\Hash</Filter>
+    </ClInclude>
+    <ClInclude Include="hash.h">
+      <Filter>头文件\Hash</Filter>
+    </ClInclude>
+    <ClInclude Include="hashChains.h">
+      <Filter>头文件\Hash</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="binaryTreeTest.cpp">
@@ -195,6 +231,9 @@
       <Filter>源文件\Test</Filter>
     </ClCompile>
     <ClCompile Include="Graph_List_Test.cpp">
+      <Filter>源文件\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="hashTest.cpp">
       <Filter>源文件\Test</Filter>
     </ClCompile>
   </ItemGroup>

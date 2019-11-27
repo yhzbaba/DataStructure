@@ -134,6 +134,7 @@
     <ClInclude Include="circularListWithHeader.h" />
     <ClInclude Include="completeWinnerTree.h" />
     <ClInclude Include="delete2dArray.h" />
+    <ClInclude Include="dictionary.h" />
     <ClInclude Include="edge.h" />
     <ClInclude Include="exprTree.h" />
     <ClInclude Include="extendedChain.h" />
@@ -141,6 +142,9 @@
     <ClInclude Include="graph.h" />
     <ClInclude Include="Graph_List.h" />
     <ClInclude Include="Graph_Matrix.h" />
+    <ClInclude Include="hash.h" />
+    <ClInclude Include="hashChains.h" />
+    <ClInclude Include="hashTable.h" />
     <ClInclude Include="HuffmanTree.h" />
     <ClInclude Include="linkedQueue.h" />
     <ClInclude Include="linkedStack.h" />
@@ -154,10 +158,16 @@
     <ClInclude Include="myException.h" />
     <ClInclude Include="linearList.h" />
     <ClInclude Include="matrix.h" />
+    <ClInclude Include="pairNode.h" />
     <ClInclude Include="queue.h" />
+    <ClInclude Include="skipList.h" />
+    <ClInclude Include="skipNode.h" />
     <ClInclude Include="sort.h" />
+    <ClInclude Include="sortedChain.h" />
     <ClInclude Include="stack.h" />
+    <ClInclude Include="stringToInt.h" />
     <ClInclude Include="ThreadInTree.h" />
+    <ClInclude Include="threeToLong.h" />
     <ClInclude Include="Tree.h" />
     <ClInclude Include="UFSet.h" />
     <ClInclude Include="UnionFindSet.h" />
@@ -171,6 +181,7 @@
     <ClCompile Include="arrayStackTest.cpp" />
     <ClCompile Include="binaryTreeTest.cpp" />
     <ClCompile Include="Graph_List_Test.cpp" />
+    <ClCompile Include="hashTest.cpp" />
     <ClCompile Include="maxHeapTest.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,5 +1,8 @@
-﻿  Graph_List_Test.cpp
+﻿  arrayListTest.cpp
+  arrayStackTest.cpp
   binaryTreeTest.cpp
+  Graph_List_Test.cpp
+  hastTest.cpp
+  maxHeapTest.cpp
   正在生成代码...
-E:\大二上\数据结构\Code\DataStructure\DataStructure\arrayStack.h(70,20): warning C4018:  “<”: 有符号/无符号不匹配
   DataStructure.vcxproj -> E:\大二上\数据结构\Code\DataStructure\Debug\DataStructure.exe

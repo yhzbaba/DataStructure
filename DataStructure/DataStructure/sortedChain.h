@@ -87,3 +87,49 @@ void sortedChain<K, E>::insert(const pair<const K, E>& thePair)
 	dSize++;
 	return;
 }
+
+/*delete the match whose key is theKey*/
+template<class K,class E>
+void sortedChain<K, E>::erase(const K& theKey)
+{
+	pairNode<K, E>* p = firstNode,
+		* tp = NULL;
+
+	// search match whose key is theKey
+	while (p != NULL && p->element.first < theKey)
+	{
+		tp = p;
+		p = p->next;
+	}
+
+	// verify if matches
+	if (p != NULL && p->element.first == theKey)
+	{
+		if (tp == NULL)
+			firstNode = p->next;
+		else tp->next = p->next;
+
+		delete p;
+		dSize--;
+	}
+}
+
+template<class K,class E>
+void sortedChain<K, E>::output(ostream& out) const
+{
+	for (pairNode<K, E>* currentNode = firstNode;
+		currentNode != NULL;
+		currentNode = currentNode->next)
+	{
+		out << currentNode->element.first << " "
+			<< currentNode->element.second << "  ";
+	}
+}
+
+/*overload <<*/
+template<class K,class E>
+ostream& operator<<(ostream& out, const sortedChain<K, E>& x)
+{
+	x.output(out);
+	return out;
+}

@@ -180,9 +180,6 @@
     <ClInclude Include="Graph_List.h">
       <Filter>头文件\Graph</Filter>
     </ClInclude>
-    <ClInclude Include="sort.h">
-      <Filter>头文件\Sort</Filter>
-    </ClInclude>
     <ClInclude Include="Tree.h">
       <Filter>头文件\Tree</Filter>
     </ClInclude>
@@ -216,6 +213,21 @@
     <ClInclude Include="hashChains.h">
       <Filter>头文件\Hash</Filter>
     </ClInclude>
+    <ClInclude Include="insertSort.h">
+      <Filter>头文件\Sort</Filter>
+    </ClInclude>
+    <ClInclude Include="shellSort.h">
+      <Filter>头文件\Sort</Filter>
+    </ClInclude>
+    <ClInclude Include="element.h">
+      <Filter>头文件\Sort</Filter>
+    </ClInclude>
+    <ClInclude Include="Bubble.h">
+      <Filter>头文件\Sort</Filter>
+    </ClInclude>
+    <ClInclude Include="quickSort.h">
+      <Filter>头文件\Sort</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="binaryTreeTest.cpp">
@@ -234,6 +246,9 @@
       <Filter>源文件\Test</Filter>
     </ClCompile>
     <ClCompile Include="hashTest.cpp">
+      <Filter>源文件\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="sortTest.cpp">
       <Filter>源文件\Test</Filter>
     </ClCompile>
   </ItemGroup>

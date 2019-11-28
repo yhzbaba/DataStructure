@@ -129,10 +129,12 @@
     <ClInclude Include="arrayStack.h" />
     <ClInclude Include="binaryTreeNode.h" />
     <ClInclude Include="binSort.h" />
+    <ClInclude Include="Bubble.h" />
     <ClInclude Include="chain.h" />
     <ClInclude Include="chainNode.h" />
     <ClInclude Include="circularListWithHeader.h" />
     <ClInclude Include="completeWinnerTree.h" />
+    <ClInclude Include="element.h" />
     <ClInclude Include="delete2dArray.h" />
     <ClInclude Include="dictionary.h" />
     <ClInclude Include="edge.h" />
@@ -146,6 +148,7 @@
     <ClInclude Include="hashChains.h" />
     <ClInclude Include="hashTable.h" />
     <ClInclude Include="HuffmanTree.h" />
+    <ClInclude Include="insertSort.h" />
     <ClInclude Include="linkedQueue.h" />
     <ClInclude Include="linkedStack.h" />
     <ClInclude Include="make2dArray.h" />
@@ -160,9 +163,10 @@
     <ClInclude Include="matrix.h" />
     <ClInclude Include="pairNode.h" />
     <ClInclude Include="queue.h" />
+    <ClInclude Include="quickSort.h" />
+    <ClInclude Include="shellSort.h" />
     <ClInclude Include="skipList.h" />
     <ClInclude Include="skipNode.h" />
-    <ClInclude Include="sort.h" />
     <ClInclude Include="sortedChain.h" />
     <ClInclude Include="stack.h" />
     <ClInclude Include="stringToInt.h" />
@@ -183,6 +187,7 @@
     <ClCompile Include="Graph_List_Test.cpp" />
     <ClCompile Include="hashTest.cpp" />
     <ClCompile Include="maxHeapTest.cpp" />
+    <ClCompile Include="sortTest.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -13,7 +13,7 @@ void ShellSort(Element<T>* list, int n)
 		gap = gap / 2;
 		for (int i = 1; i <= gap; i++)
 		{
-			for (int j = i + gap; j <= n; j++)
+			for (int j = i + gap; j <= n; j = j + gap)
 			{
 				Element<T> e = list[j];
 				int t = j - gap;

@@ -127,6 +127,8 @@
     <ClInclude Include="arrayList.h" />
     <ClInclude Include="arrayQueue.h" />
     <ClInclude Include="arrayStack.h" />
+    <ClInclude Include="AVLTree.h" />
+    <ClInclude Include="binarySearchTree.h" />
     <ClInclude Include="binaryTreeNode.h" />
     <ClInclude Include="binSort.h" />
     <ClInclude Include="Bubble.h" />
@@ -155,6 +157,7 @@
     <ClInclude Include="maxHblt.h" />
     <ClInclude Include="maxHeap.h" />
     <ClInclude Include="maxPriorityQueue.h" />
+    <ClInclude Include="MergeSort.h" />
     <ClInclude Include="MidToBack.h" />
     <ClInclude Include="minHeap.h" />
     <ClInclude Include="minPriorityQueue.h" />
@@ -183,6 +186,7 @@
   <ItemGroup>
     <ClCompile Include="arrayListTest.cpp" />
     <ClCompile Include="arrayStackTest.cpp" />
+    <ClCompile Include="binarySearchTree.cpp" />
     <ClCompile Include="binaryTreeTest.cpp" />
     <ClCompile Include="Graph_List_Test.cpp" />
     <ClCompile Include="hashTest.cpp" />

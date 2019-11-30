@@ -58,6 +58,9 @@
     <Filter Include="头文件\Hash">
       <UniqueIdentifier>{cb3d7d7c-74da-41ee-8134-021330cc86da}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\SearchTree">
+      <UniqueIdentifier>{8fa1da5b-ecf4-4150-bae7-aad41ab7d3ad}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="binaryTreeNode.h">
@@ -228,6 +231,15 @@
     <ClInclude Include="quickSort.h">
       <Filter>头文件\Sort</Filter>
     </ClInclude>
+    <ClInclude Include="binarySearchTree.h">
+      <Filter>头文件\SearchTree</Filter>
+    </ClInclude>
+    <ClInclude Include="MergeSort.h">
+      <Filter>头文件\Sort</Filter>
+    </ClInclude>
+    <ClInclude Include="AVLTree.h">
+      <Filter>头文件\SearchTree</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="binaryTreeTest.cpp">
@@ -249,6 +261,9 @@
       <Filter>源文件\Test</Filter>
     </ClCompile>
     <ClCompile Include="sortTest.cpp">
+      <Filter>源文件\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="binarySearchTree.cpp">
       <Filter>源文件\Test</Filter>
     </ClCompile>
   </ItemGroup>

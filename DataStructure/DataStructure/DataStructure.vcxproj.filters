@@ -61,6 +61,18 @@
     <Filter Include="头文件\SearchTree">
       <UniqueIdentifier>{8fa1da5b-ecf4-4150-bae7-aad41ab7d3ad}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\String">
+      <UniqueIdentifier>{cb6771b2-92a8-4789-b81f-09cd66f7a6b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\FinalExam">
+      <UniqueIdentifier>{7b0803c2-4bf9-46a2-b3d0-7e92ed261f36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\FinalExam\Set">
+      <UniqueIdentifier>{80aacbbf-9eea-4caa-9c78-cff3937a4ac3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\FinalExam\Graph">
+      <UniqueIdentifier>{2165e2b0-2bf4-4f4a-9374-3757a4df5dd6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="binaryTreeNode.h">
@@ -240,6 +252,15 @@
     <ClInclude Include="AVLTree.h">
       <Filter>头文件\SearchTree</Filter>
     </ClInclude>
+    <ClInclude Include="KMP.h">
+      <Filter>头文件\String</Filter>
+    </ClInclude>
+    <ClInclude Include="RBTree.h">
+      <Filter>头文件\SearchTree</Filter>
+    </ClInclude>
+    <ClInclude Include="union.h">
+      <Filter>头文件\FinalExam\Set</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="binaryTreeTest.cpp">
@@ -264,6 +285,12 @@
       <Filter>源文件\Test</Filter>
     </ClCompile>
     <ClCompile Include="binarySearchTree.cpp">
+      <Filter>源文件\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="stringTest.cpp">
+      <Filter>源文件\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="myMaxHeapTest.cpp">
       <Filter>源文件\Test</Filter>
     </ClCompile>
   </ItemGroup>

@@ -151,6 +151,7 @@
     <ClInclude Include="hashTable.h" />
     <ClInclude Include="HuffmanTree.h" />
     <ClInclude Include="insertSort.h" />
+    <ClInclude Include="KMP.h" />
     <ClInclude Include="linkedQueue.h" />
     <ClInclude Include="linkedStack.h" />
     <ClInclude Include="make2dArray.h" />
@@ -167,6 +168,7 @@
     <ClInclude Include="pairNode.h" />
     <ClInclude Include="queue.h" />
     <ClInclude Include="quickSort.h" />
+    <ClInclude Include="RBTree.h" />
     <ClInclude Include="shellSort.h" />
     <ClInclude Include="skipList.h" />
     <ClInclude Include="skipNode.h" />
@@ -177,6 +179,7 @@
     <ClInclude Include="threeToLong.h" />
     <ClInclude Include="Tree.h" />
     <ClInclude Include="UFSet.h" />
+    <ClInclude Include="union.h" />
     <ClInclude Include="UnionFindSet.h" />
     <ClInclude Include="vectorList.h" />
     <ClInclude Include="vertexIterator.h" />
@@ -191,7 +194,9 @@
     <ClCompile Include="Graph_List_Test.cpp" />
     <ClCompile Include="hashTest.cpp" />
     <ClCompile Include="maxHeapTest.cpp" />
+    <ClCompile Include="myMaxHeapTest.cpp" />
     <ClCompile Include="sortTest.cpp" />
+    <ClCompile Include="stringTest.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

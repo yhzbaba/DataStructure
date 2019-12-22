@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <math.h>
+#include "arrayQueue.h"
 
 using namespace std;
 //cyberchef
@@ -44,6 +45,7 @@ public:
 	void insert(T key);
 	void remove(T key);
 	void destroy();
+	AVLTreeNode<T>* getRoot() { return root; }
 	//void print();
 private:
 	// inner interfaces
@@ -378,3 +380,40 @@ void AVLTree<T>::destroy()
 //	if (root != NULL)
 //		print(root, root->key, 0);
 //}
+
+// only can be used in exist node
+template<class T>
+int getLevel(AVLTreeNode<T>* tree,AVLTreeNode<T>* root)
+{
+	T key = tree->key;
+	int level = 0;
+	arrayQueue<AVLTreeNode<T>*> Q;
+	if (!tree)
+		return 0;
+	Q.push(root);
+	// The first level ended.
+	Q.push(NULL);
+	while (!Q.empty())
+	{
+		tree = Q.front();
+		Q.pop();
+		// if the current level is ended.
+		if (tree == NULL)
+		{
+			// push the end flag of next level
+			if (!Q.empty())
+				Q.push(NULL);
+			level++;
+		}
+		else
+		{
+			if (tree->key == key)
+				break;
+			if (tree->left)
+				Q.push(tree->left);
+			if (tree->right)
+				Q.push(tree->right);
+		}
+	}
+	return level;
+}

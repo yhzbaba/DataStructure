@@ -1,2 +1,3 @@
-﻿  binarySearchTree.cpp
-  DataStructure.vcxproj -> E:\大二上\数据结构\Code\DataStructure\Debug\DataStructure.exe
+﻿  binaryTreeTest.cpp
+E:\数据结构\Code\DataStructure\DataStructure\arrayStack.h(70,20): warning C4018:  “<”: 有符号/无符号不匹配
+  DataStructure.vcxproj -> E:\数据结构\Code\DataStructure\Debug\DataStructure.exe

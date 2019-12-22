@@ -6,20 +6,20 @@
 using namespace std;
 
 const int MaxGraphSize = 256;
-	//最大顶点个数
+//最大顶点个数
 const int MaxWeight = 1000;
-	//最大权值
+//最大权值
 
 //边结点的结构体
 struct Edge
 {
 	friend class Graph_List;
 	int VerAdj;
-		//邻接顶点序号，从0开始编号
+	//邻接顶点序号，从0开始编号
 	int cost;
-		//the cost of the edge
+	//the cost of the edge
 	Edge* link;
-		//the pointer which point to the next node
+	//the pointer which point to the next node
 };
 
 //顶点表中结点的结构体
@@ -27,9 +27,9 @@ struct Vertex
 {
 	friend class Graph_List;
 	int VerName;
-		//顶点的名称
+	//顶点的名称
 	Edge* adjacent;
-		//边链表头指针
+	//边链表头指针
 };
 
 //采用邻接表存储的Graph_List类定义
@@ -37,32 +37,27 @@ class Graph_List
 {
 private:
 	Vertex* Head;
-		//顶点表头指针
+	//顶点表头指针
 	int graphsize;
-		//图中当前顶点个数
+	//图中当前顶点个数
+	void DepthFirstSearch(const int v, int* visited);
+	void DDepthFirstSearch(const int v);
+	void BFS(const int s, int* visited);
 public:
 	Graph_List();
 	virtual ~Graph_List();
 
 	int GetWeight(const int& v1, const int& v2);
-		//返回指定边的权值
+	//返回指定边的权值
 	int GetNextNeighbor(const int v1, const int v2);
-		//序号为v1的顶点相对于序号为v2的顶点的下一个邻接顶点序号
+	//序号为v1的顶点相对于序号为v2的顶点的下一个邻接顶点序号
+
 	void DepthFirstSearch();
-	void DepthFirstSearch(const int v, int* visited);
-	void DDepthFirstSearch(const int v);
-
-	void BFS(const int s);
-
+	void BBFFSS();
 	void TopoOrder();
-
 	void CriticalPath();
-
 	void ShortestPath(const int v);
-
 	void DShortestPath(const int v);
-
-	void Prim();
 };
 
 //构造函数
@@ -78,7 +73,7 @@ Graph_List::Graph_List()
 		Head[i].VerName = i;
 		Head[i].adjacent = NULL;
 	}
-	
+
 	//输入边的个数
 	cout << "输入边个数" << endl;
 	cin >> e;
@@ -86,6 +81,7 @@ Graph_List::Graph_List()
 	//依次输入各边
 	for (int i = 0; i < e; i++)
 	{
+		cout << "请输入第" << i + 1 << "条边:";
 		cin >> from >> to >> weight;
 		Edge* p = new Edge;
 		p->VerAdj = to;
@@ -168,7 +164,24 @@ void Graph_List::DepthFirstSearch()
 	int* visited = new int[graphsize];
 	for (int k = 0; k < graphsize; k++)
 		visited[k] = 0;
-	DepthFirstSearch(0, visited);
+	for (int k = 0; k < graphsize; k++)
+	{
+		if (visited[k] == 0)
+			DepthFirstSearch(k, visited);
+	}
+	delete[] visited;
+}
+
+void Graph_List::BBFFSS()
+{
+	int* visited = new int[graphsize];
+	for (int k = 0; k < graphsize; k++)
+		visited[k] = 0;
+	for (int k = 0; k < graphsize; k++)
+	{
+		if (visited[k] == 0)
+			BFS(k, visited);
+	}
 	delete[] visited;
 }
 
@@ -201,17 +214,20 @@ void Graph_List::DDepthFirstSearch(const int v)
 			}
 		}
 	}
+	for (int i = v + 1; i < graphsize; i++)
+	{
+		if (visited[i] == 0)
+		{
+			DDepthFirstSearch(i);
+		}
+		break;
+	}
 	delete[] visited;
 }
 
 //广度优先搜索
-void Graph_List::BFS(const int s)
+void Graph_List::BFS(const int s, int* visited)
 {
-	int* visited = new int[graphsize];
-	for (int k = 0; k < graphsize; k++)
-	{
-		visited[k] = 0;
-	}
 	cout << s << " ";
 	visited[s] = 1;
 	arrayQueue<int> q;
@@ -219,6 +235,7 @@ void Graph_List::BFS(const int s)
 	while (!q.empty())
 	{
 		int v = q.front();
+		q.pop();
 		Edge* p = Head[v].adjacent;
 		while (p != NULL)
 		{
@@ -231,7 +248,6 @@ void Graph_List::BFS(const int s)
 			p = p->link;
 		}
 	}
-	delete[] visited;
 }
 
 //拓扑排序
@@ -348,7 +364,7 @@ void Graph_List::CriticalPath()
 			e = ve[i];
 			l = vl[k] - p->cost;
 			if (l == e)
-				cout << "<" << i << "," << k << ">" << "is Critical Acitvity!" << endl;
+				cout << "<" << i << "," << k << ">" << "is Critical Activity!" << endl;
 			p = p->link;
 		}
 	}

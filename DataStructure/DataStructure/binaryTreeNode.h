@@ -336,23 +336,6 @@ void DelSubtree(binaryTreeNode<T>* root,binaryTreeNode<T>* t)
 	delete p;
 }
 
-//确认树的高度		2
-template<class T>
-int getHeight(binaryTreeNode<T>* t)
-{
-	int h = 0, h1, h2;
-	if (t == NULL)
-		return 0;
-
-	h1 = getHeight(t->leftChild);
-	h2 = getHeight(t->rightChild);
-	if (h1 > h2)
-		h = h1 + 1;
-	else
-		h = h2 + 1;
-	return h;
-}
-
 //统计树的结点数		2
 template<class T>
 int getNodeCount(binaryTreeNode<T>* t)
@@ -419,3 +402,488 @@ vector<int> allWidthOfBinaryTree(binaryTreeNode<T>* pNode)
 	}
 	return ret;
 }
+
+/*Find the max element in a binary tree.*/
+template<class T>
+T FindMax(binaryTreeNode<T>* root)
+{
+	T root_val, left, right, max = (T)INT_MIN;
+	if (root != NULL)
+	{
+		root_val = root->element;
+		left = FindMax(root->leftChild);
+		right = FindMax(root->rightChild);
+		if (left > right)
+			max = left;
+		else
+			max = right;
+		if (root_val > max)
+		{
+			max = root_val;
+		}
+	}
+	return max;
+}
+
+/*Find the min element in a binary tree.*/
+template<class T>
+T FindMaxUsingLevelOrder(binaryTreeNode<T>* root)
+{
+	//运用二叉树的层次遍历，只需要在删除元素时观察该元素
+	binaryTreeNode<T>* temp;
+	int max = INT_MIN;
+	arrayQueue<binaryTreeNode<T>*> Q;
+	Q.push(root);
+	while (!Q.empty())
+	{
+		temp = Q.front();
+		Q.pop();
+		//树的最大元素
+		if (max < temp->element)
+			max = temp->element;
+		if (temp->leftChild)
+			Q.push(root->leftChild);
+		if (temp->rightChild)
+			Q.push(root->rightChild);
+	}
+	Q.~arrayQueue();
+	return max;
+}
+
+/*Insert an element into a binary tree*/
+template<class T>
+void InsertInBinaryTree(binaryTreeNode<T>* root, T data)
+{
+	arrayQueue<T> Q;
+	binaryTreeNode<T>* temp, * newNode;
+	newNode = new binaryTreeNode<T>();
+	newNode->leftChild = newNode->rightChild = NULL;
+	if (!newNode){
+		cout << "Memory Error." << endl;
+		return;
+	}
+	if (!root) {
+		root = newNode;
+		return;
+	}
+	Q.push(root);
+	while (!Q.empty()){
+		temp = Q.front();
+		if (temp->leftChild)
+			Q.push(temp->leftChild);
+		else {
+			temp->leftChild = newNode;
+			Q.~arrayQueue();
+			return;
+		}
+		if (temp->rightChild)
+			Q.push(temp->rightChild);
+		else {
+			temp->rightChild = newNode;
+			Q.~arrayQueue();
+			return;
+		}
+	}
+	Q.~arrayQueue();
+}
+
+/*Count the nodes in the binary tree*/
+template<class T>
+int SizeOfBinaryTree(binaryTreeNode<T>* root) {
+	if (root == NULL)
+		return 0;
+	else
+		return SizeOfBinaryTree(root->leftChild)
+		+ SizeOfBinaryTree(root->rightChild) + 1;
+}
+
+/*Count the nodes without incursion*/
+template<class T>
+int SizeofBTUsingLevelOrder(binaryTreeNode<T>* root)
+{
+	binaryTreeNode<T>* temp;
+	arrayQueue<T> Q;
+	int count = 0;
+	if (!root)
+		return 0;
+	Q.push(root);
+	while (!Q.empty())
+	{
+		temp = Q.front();
+		Q.pop();
+		count++;
+		if (temp->leftChild)
+			Q.push(temp->leftChild);
+		if (temp->rightChild)
+			Q.push(temp->rightChild);
+	}
+	Q.~arrayQueue();
+	return count;
+}
+
+/*Find the deepest node int the binary tree*/
+template<class T>
+binaryTreeNode<T>* DeepestNodeinBinaryTree(binaryTreeNode<T>* root)
+{
+	binaryTreeNode<T>* temp;
+	arrayQueue<T> Q;
+	if (!root)
+		return NULL;
+	Q.push(root);
+	while (!Q.empty())
+	{
+		temp = Q.front();
+		Q.pop();
+		if (temp->leftChild)
+			Q.push(temp->leftChild);
+		if (temp->rightChild)
+			Q.push(temp->rightChild);
+	}
+	Q.~arrayQueue();
+	return temp;
+}
+
+//给出一个算法，求二叉树的高度
+template<class T>
+int HeightOfBinaryTree(binaryTreeNode<T>* root)
+{
+	int leftHeight, rightHeight;
+	if (root == NULL)
+		return 0;
+	else
+	{
+		leftHeight = HeightOfBinaryTree(root->leftChild);
+		rightHeight = HeightOfBinaryTree(root->rightChild);
+
+		if (leftHeight > rightHeight)
+			return leftHeight + 1;
+		else
+			return rightHeight + 1;
+	}
+}
+
+//不用递归的方式解决上一个问题
+template<class T>
+int FindHeightofBinaryTree(binaryTreeNode<T>* root)
+{
+	int level = 0;
+	arrayQueue<binaryTreeNode<T>*> Q;
+	if (!root)
+	{
+		return 0;
+	}
+	Q.push(root);
+	//第一层结束
+	Q.push(NULL);
+	while (!Q.empty())
+	{
+		root = Q.front();
+		Q.pop();
+		//当前层结束
+		if (root == NULL)
+		{
+			//压入下一层的结束标记
+			if (!Q.empty())
+				Q.push(NULL);
+			level++;
+		}
+		else {
+			if (root->leftChild)
+				Q.push(root->leftChild);
+			if (root->rightChild)
+				Q.push(root->rightChild);
+		}
+	}
+	return level;
+}
+
+//判断两棵二叉树是否是结构相同的
+template<class T>
+int AreStructurullySameTrees(binaryTreeNode<T>* root1, binaryTreeNode<T>* root2)
+{
+	if (root1 == NULL && root2 == NULL)
+		return 1;
+	else if (root1 == NULL || root2 == NULL)
+		return 0;
+	return (root1->element == root2->element && AreStructurullySameTrees(root1->leftChild, root2->rightChild)
+		&& AreStructurullySameTrees(root1->rightChild, root2->rightChild));
+}
+
+//给出一个算法，求二叉树的直径，两个叶子节点之间的最长路径的节点个数
+//我们需要计算所有结点的所有左右子树的高度之和，其中的最大值就是二叉树的直径
+//template<class T>
+//int DiameterOfTree(binaryTreeNode<T>* root, int* ptr)
+//{
+//	int left, right;
+//	if (!root)
+//		return 0;
+//	left = DiameterOfTree(root->leftChild, ptr);
+//	right = DiameterOfTree(root->rightChild, ptr);
+//	if (left + right > * ptr)
+//		* ptr = left + right;
+//	return max(left, right) + 1;
+//}
+
+//给出一个算法，找出二叉树中节点值之和最大的层
+template<class T>
+int FindLevelWithMaxSum(binaryTreeNode<T>* root)
+{
+	binaryTreeNode<T>* temp;
+	int level = 0, maxLevel = 0;
+	arrayQueue<binaryTreeNode<T>*> Q;
+	int currentSum = 0, maxSum = 0;
+	if (!root)
+		return 0;
+	Q.push(root);
+	//第一层结束
+	Q.push(NULL);
+	while (!Q.empty())
+	{
+		temp = Q.front();
+		Q.pop();
+		//如果当前层遍历完则比较和
+		if (temp == NULL)
+		{
+			if (currentSum > maxSum)
+			{
+				maxSum = currentSum;
+				maxLevel = level;
+			}
+			currentSum = 0;
+			//将下一层结束标记插入队尾
+			if (!Q.empty())
+			{
+				Q.push(NULL);
+			}
+			level++;
+		}
+		else
+		{
+			currentSum += temp->element;
+			if (temp->leftChild)
+				Q.push(temp->leftChild);
+			if (temp->rightChild)
+				Q.push(temp->rightChild);
+		}
+	}
+}
+
+void PrintArray(int ints[], int len)
+{
+	for (int i = 0; i < len; i++)
+	{
+		printf("%d ", ints[i]);
+	}
+	cout << endl;
+}
+
+//给出算法，输出二叉树中所有根到叶子节点的路径信息
+void PrintPathsRecur(binaryTreeNode<int>* root, int path[], int pathLen)
+{
+	if (root == NULL)
+		return;
+	//将根节点添加到路径数组中
+	path[pathLen] = root->element;
+	pathLen++;
+
+	//如果是叶子节点，则打印从根节点到该叶子节点的路径信息
+	if (root->leftChild == NULL && root->rightChild == NULL)
+		PrintArray(path, pathLen);
+	else
+	{
+		PrintPathsRecur(root->leftChild, path, pathLen);
+		PrintPathsRecur(root->rightChild, path, pathLen);
+	}
+}
+
+//问题21给出一个算法，判断二叉树中是否存在一条路径，节点值和=sum
+//在递归判断当前节点的左右孩子之前，从sum减去当前结点的值，到达边界判断sum是否为0
+template<class T>
+int HasPathSum(binaryTreeNode<T>* root, int sum)
+{
+	//如果我们访问完树且sum=0,那么我们返回true
+	if (root == NULL)
+		return sum == 0;
+	else {
+		//否则判断两棵子树
+		int remainingSum = sum - root->element;
+		if ((root->leftChild && root->rightChild) || (!root->leftChild && !root->rightChild))
+		{
+			return (HasPathSum(root->leftChild, remainingSum) ||
+				HasPathSum(root->rightChild, remainingSum));
+		}
+		else if (root->leftChild)
+			return HasPathSum(root->leftChild, remainingSum);
+		else
+			return HasPathSum(root->rightChild, remainingSum);
+	}
+}
+
+// 非递归计算二叉树中所有节点之和
+template<class T>
+int SumofBTusingLevelOrder(binaryTreeNode<T>* root)
+{
+	binaryTreeNode<T>* temp;
+	arrayQueue<binaryTreeNode<T>*> Q;
+	int sum = 0;
+	if (!root)
+		return 0;
+	Q.push(root);
+	while (!Q.empty())
+	{
+		temp = Q.front();
+		Q.pop();
+		sum += temp->element;
+		if (temp->leftChild)
+			Q.push(temp->leftChild);
+		if (temp->rightChild)
+			Q.push(temp->rightChild);
+	}
+	Q.~arrayQueue();
+	return sum;
+}
+
+//求二叉树在镜子中的像
+template<class T>
+binaryTreeNode<T>* MirrorOfBinaryTree(binaryTreeNode<T>* root)
+{
+	binaryTreeNode<T>* temp;
+	if (root)
+	{
+		MirrorOfBinaryTree(root->leftChild);
+		MirrorOfBinaryTree(root->rightChild);
+		temp = root->leftChild;
+		root->leftChild = root->rightChild;
+		root->rightChild = temp;
+	}
+	return root;
+}
+
+//判断两棵二叉树是否互为镜子中的像
+template<class T>
+int AreMirrors(binaryTreeNode<T>* root1, binaryTreeNode<T>* root2)
+{
+	if (root1 == NULL && root2 == NULL)
+		return 1;
+	if (root1 == NULL || root2 == NULL)
+		return 0;
+	if (root1->element != root2->element)
+		return 0;
+	else return AreMirrors(root1->leftChild, root2->rightChild) 
+		&& AreMirrors(root1->rightChild, root2->leftChild);
+}
+
+// LCA重点问题！！！！
+// 给出一个算法，求解二叉树中给定两个节点的最近共同祖先
+template<class T>
+binaryTreeNode<T>* LCA(binaryTreeNode<T>* root, binaryTreeNode<T>* a, binaryTreeNode<T>* b)
+{
+	binaryTreeNode<T>* left,* right;
+	if (root == NULL)
+		return NULL;
+	if (root == a || root == b)
+	{
+		return root;
+	}
+	left = LCA(root->leftChild, a, b);
+	right = LCA(root->rightChild, a, b);
+	if (left && right)
+		return root;
+	else
+		return (left ? left : right);
+}
+
+//用中序和先序构造一棵二叉树
+template<class T>
+binaryTreeNode<T>* BuildBinaryTree(int inOrder[], int preOrder[], int inOrderStart, int inOrderEnd)
+{
+	static int preOrderIndex = 0;
+	binaryTreeNode<T>* newNode;
+	if (inOrderStart > inOrderEnd)
+		return NULL;
+	newNode = new binaryTreeNode<T>();
+	if (!newNode)
+	{
+		printf("Memory Error!");
+		return NULL;
+	}
+	//利用preOrderIndex从先序遍历序列中选出当前结点
+	newNode->element = preOrder[preOrderIndex];
+	preOrderIndex++;
+	if (inOrderStart == inOrderEnd)
+		return newNode;
+	int inOrderIndex = 0;
+	//查找该结点在中序遍历序列中的位序
+	for (int i = inOrderStart; i <= inOrderEnd; i++)
+	{
+		if (inOrder[i] == newNode->element)
+			inOrderIndex = i;
+	}
+	//填充左右子树
+	newNode->leftChild = BuildBinaryTree(inOrder, preOrder, inOrderStart, inOrderIndex - 1);
+	newNode->rightChild = BuildBinaryTree(inOrder, preOrder, inOrderIndex + 1, inOrderEnd);
+	return newNode;
+}
+
+//打印二叉树中所有指定结点的所有祖先
+//DFS怎么做呢???
+template<class T>
+T PrintAllAncestors(binaryTreeNode<T>* root, binaryTreeNode<T>* node)
+{
+	if (root == NULL)
+		return 0;
+	if (root->leftChild == node || root->rightChild == node || PrintAllAncestors(root->leftChild, node)
+		|| PrintAllAncestors(root->rightChild, node))
+	{
+		cout << root->element << " ";
+		return 1;
+	}
+	return 0;
+}
+
+//问题30了
+
+
+
+
+
+
+
+
+
+//以下是普通树的问题
+struct TreeNode
+{
+	int data;
+	struct TreeNode* firstChild;
+	struct TreeNode* nextSibling;
+};
+
+//给出一个算法，求出树中所有节点的值之和
+int FindSum(struct TreeNode* root)
+{
+	if (!root)
+		return 0;
+	return root->data + FindSum(root->firstChild) + FindSum(root->nextSibling);
+}
+
+//给定一个双亲数组P，其中P[i]表示的是树中第i个结点的双亲，给出算法求高度
+int FindDepthInGenericTree(int P[], int n)
+{
+	int maxDepth = -1, currentDepth = -1, j;
+	for (int i = 0; i < n; i++)
+	{
+		currentDepth = 0;
+		j = i;
+		while (P[j] != -1)
+		{
+			currentDepth++; j = P[j];
+		}
+		if (currentDepth > maxDepth)
+			maxDepth = currentDepth;
+	}
+	return maxDepth;
+}
+
+
+

@@ -67,7 +67,7 @@ void arrayStack<T>::push(const T& theElement)
 bool matchBrackets(string expr)
 {
 	arrayStack<char> stack;
-	for (int i = 0; i < expr.size(); i++)
+	for (int i = 0; i < (int)expr.size(); i++)
 	{
 		if (expr[i] == '{' || expr[i] == '[' || expr[i] == '(')
 		{

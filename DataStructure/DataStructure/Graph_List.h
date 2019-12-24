@@ -480,3 +480,185 @@ void Graph_List::DShortestPath(const int v)
 }
 
 //Prim算法
+
+//n个顶点的无向简单图，最多多少条边?
+//1+2+3+...+n-1=n(n-1)/2
+
+//具有n个顶点E条边的图有多少种不同的邻接矩阵表示?
+//n!
+
+//检测给定图中是否存在从s到d的简单路径
+namespace question_10 {
+	struct Graph {
+		int V;
+		int E;
+		int** adjMatrix;
+	};
+
+	int Visited[100] = { 0 };
+
+	int HasSimplePath(struct Graph* G, int s, int d)
+	{
+		Visited[s] = 1;
+		if (s == d)
+			return 1;
+		for (int t = 0; t < G->V; t++)
+		{
+			if (G->adjMatrix[s][t] && !Visited[t])
+				if (HasSimplePath(G, t, d))
+					return 1;
+		}
+		return 0;
+	}
+}
+
+//计算G中有多少条从s到d的简单路径
+//namespace question_10 {
+//	int count = 0;
+//	int Visited[100] = { 0 };
+//	void CountSimplePaths(question_10::Graph* G, int s, int d) {
+//		Visited[s] = 1;
+//		if (s == d) {
+//			count++;
+//			Visited[s] = 0;
+//			return;
+//		}
+//		for (int t = 0;t<G->V;t++)
+//		{
+//			if (G->adjMatrix[s][t] && !Visited[t]) {
+//				CountSimplePaths(G, t, d);
+//				Visited[t] = 0;
+//			}
+//		}
+//	}
+//}
+
+namespace Dijkstra {
+	int a[3010][3010] = { 0 }, d[3010] = { 0 }, n, m;
+	bool v[3010];
+	int path[3010];
+	void dijkstra() {
+		memset(d, 0x3f, sizeof(d));//dist数组
+		memset(v, 0, sizeof(v));//节点标记
+		memset(path, -1, sizeof(path));
+		d[1] = 0;
+		for (int i = 1; i < n; i++) {
+			int x = 0;
+			//找到未标记节点中dist最小的
+			for (int j = 1; j <= n; j++) {
+				if (!v[j] && (x == 0 || d[j] < d[x]))
+					x = j;
+			}
+			v[x] = 1;
+			//用全局最小值点x更新其他节点
+			for (int y = 1; y <= n; y++) {
+				if (d[x] + a[x][y] < d[y])
+				{
+					d[y] = d[x] + a[x][y];
+					path[y] = x;
+				}
+			}
+		}
+	}
+
+	void dijkstra_main() {
+		cin >> Dijkstra::n >> Dijkstra::m;
+		memset(Dijkstra::a, 0x3f, sizeof(a));
+		for (int i = 1; i <= n; i++) a[i][i] = 0;
+		for (int i = 1; i <= m; i++) {
+			int x, y, z;
+			scanf("%d%d%d", &x, &y, &z);
+			a[x][y] = (a[x][y] < z) ? a[x][y] : z;
+			a[y][x] = a[x][y];
+		}
+
+		dijkstra();
+		for (int i = 1; i <= n; i++) {
+			arrayStack<int> aStack;
+			for (int j = i; j != path[1]; j = path[j])
+				aStack.push(j);
+			while (!aStack.empty())
+			{
+				printf("%d", aStack.top());
+				aStack.pop();
+				if (!aStack.empty())
+					printf("->");
+			}
+			printf(" and the shortest value is %d\n", d[i]);
+		}
+	}
+}
+
+namespace SPFA {
+	const int N = 100010, M = 1000010;
+	int head[N] = { 0 }, ver[M] = { 0 }, edge[M], Next[M], d[N];
+	int n, m, tot = 0;
+	arrayQueue<int> q;
+	bool v[N];
+
+	void add(int x, int y, int z) {
+		ver[++tot] = y, edge[tot] = z;
+		Next[tot] = head[x], head[x] = tot;
+	}
+
+	void spfa() {
+		memset(d, 0x3f, sizeof(d));
+		memset(v, 0, sizeof(v));	//是否在队列中
+		d[1] = 0; v[1] = 1;
+		q.push(1);
+		while (!q.empty())
+		{
+			//取出队头
+			int x = q.front(); q.pop();
+			v[x] = 0;
+			//扫描所有出边
+			for (int i = head[x]; i; i = Next[i]) {
+				int y = ver[i], z = edge[i];
+				if (d[y] > d[x] + z) {
+					d[y] = d[x] + z;
+					if (!v[y])
+						q.push(y), v[y] = 1;
+				}
+			}
+		}
+	}
+
+	void spfa_main() {
+		cin >> SPFA::n >> SPFA::m;
+		for (int i = 1; i <= m; i++) {
+			int x, y, z;
+			scanf("%d%d%d", &x, &y, &z);
+			add(x, y, z);
+		}
+
+		spfa();
+		for (int i = 1; i <= n; i++)
+			printf("%d", d[i]);
+	}
+}
+
+namespace Floyd {
+	int d[310][310], n, m;
+	void floyd_main() {
+		cin >> Floyd::n >> Floyd::m;
+		memset(d, 0x3f, sizeof(d));
+		for (int i = 1; i <= n; i++) d[i][i] = 0;
+		for (int i = 1; i <= m; i++) {
+			int x, y, z;
+			scanf("%d%d%d", &x, &y, &z);
+			d[x][y] = (d[x][y] < z) ? d[x][y] : z;
+			d[y][x] = d[x][y];
+		}
+
+		for (int k = 1; k <= n; k++)
+			for (int i = 1; i <= n; i++)
+				for (int j = 1; j <= n; j++)
+					d[i][j] = d[i][j] < d[i][k] + d[k][j] ? d[i][j] : d[i][k] + d[k][j];
+
+		for (int i = 0; i <= n; i++) {
+			for (int j = 1; j <= n; j++)
+				printf("%d ", d[i][j]);
+			puts("\n");
+		}
+	}
+}

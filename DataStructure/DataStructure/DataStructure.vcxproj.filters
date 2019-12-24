@@ -293,5 +293,8 @@
     <ClCompile Include="myMaxHeapTest.cpp">
       <Filter>源文件\Test</Filter>
     </ClCompile>
+    <ClCompile Include="graph.cpp">
+      <Filter>源文件\Test</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
